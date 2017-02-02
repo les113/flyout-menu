@@ -1,0 +1,71 @@
+@import "compass";
+
+$top:100px;
+$left:100px;
+
+li {
+  list-style:none;
+}
+.fa {
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  color: white;
+  padding-top:15px;
+  padding-left:17px;
+  @include transition (all 1s ease);
+}
+
+.home {
+  z-index: 0;
+}
+
+.menuitem1,
+.menuitem2,
+.menuitem3 {
+  z-index: -1;
+  .fa {
+    background-color: black;
+  }
+}
+
+.home,
+.menuitem1,
+.menuitem2,
+.menuitem3 {
+  top: $top;
+  left: $left;
+}
+
+.menu,
+.home,
+.menuitem1,
+.menuitem2,
+.menuitem3,
+ {
+  position: absolute;
+  @include transition (all 1s ease);
+}
+.menu:hover .fa {
+  background-color:black;
+}
+.menu.open {
+  .home {
+    transform: rotate(45deg);
+  }
+  .menuitem1 {
+    top: $top+100;
+    left: $left;
+  }
+  .menuitem2 {
+    top: $top;
+    left: $left+100;
+  }
+  .menuitem3 {
+    top: $top+100;
+    left: $left+100;
+  }
+}
